@@ -1,5 +1,6 @@
 Changes
-Field.pm
-MANIFEST
+lib/DBIx/Lookup/Field.pm
 Makefile.PL
-test.pl
+MANIFEST
+README
+t/01comprehensive.t

@@ -4,20 +4,12 @@ require 5.005_62;
 use strict;
 use warnings;
 use Carp;
+use base 'Exporter';
 
-require Exporter;
+our $VERSION = '1.2';
 
-our @ISA = qw(Exporter);
-
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
-
-# This allows declaration	use DBIx::Lookup::Field ':all';
-# If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
-# will save memory.
 our %EXPORT_TAGS = ( 'all' => [ qw(
-	dbi_lookup_field
+	dbi_lookup_field dbi_lookup_field_with_reverse
 ) ] );
 
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
@@ -25,7 +17,6 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 	
 );
-our $VERSION = '0.01';
 
 sub dbi_lookup_field {
 	my %args = @_;
@@ -49,6 +40,12 @@ EOSQL
 
 	$sth->finish;
 	return \%lookup;
+}
+
+sub dbi_lookup_field_with_reverse {
+	my $lookup = dbi_lookup_field(@_);
+	my %reverse = reverse %$lookup;
+	($lookup, \%reverse);
 }
 
 1;
@@ -124,6 +121,18 @@ is used to create the hash. Optional.
 
 =back
 
+=item dbi_lookup_field_with_reverse()
+
+This function takes the same parameters as C<dbi_lookup_field()> but in
+addition to the lookup hash, it also returns a reversed hash where you
+can lookup the table keys by the table values.
+
+  my ($lookup, $reverse) = dbi_lookup_field_with_reverse(...);
+
+Note that if a value occurs more than once, only one of the potential
+keys will win (the one that occurs first in the lookup hash's key order),
+so be warned.
+
 =back
 
 =head1 BUGS
@@ -131,13 +140,27 @@ is used to create the hash. Optional.
 None known at this time. If you find any oddities or bugs, please do
 report them to the author.
 
+=head1 INSTALLATION
+
+See perlmodinstall for information and options on installing Perl modules.
+
+=head1 AVAILABILITY
+
+The latest version of this module is available from the Comprehensive Perl
+Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
+site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
+
+=head1 VERSION
+
+This document describes version 1.2 of C<DBIx::Lookup::Field>.
+
 =head1 AUTHOR
 
-Marcel GrE<uuml>nauer E<lt>marcel@codewerk.comE<gt>
+Marcel GrE<uuml>nauer E<lt>marcel@cpan.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright 2001 Marcel GrE<uuml>nauer. All rights reserved.
+Copyright 2001-2002 Marcel GrE<uuml>nauer. All rights reserved.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

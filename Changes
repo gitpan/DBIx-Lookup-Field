@@ -1,5 +1,8 @@
 Revision history for Perl extension DBIx::Lookup::Field.
 
+1.2   Mon Sep  2 18:40:48 CEST 2002
+	- added dbi_lookup_field_with_reverse()
+
 0.01  Thu Oct 26 12:03:21 2000
 	- original version; created by h2xs 1.20 with options
 		-XA -n DBIx::Lookup::Field
