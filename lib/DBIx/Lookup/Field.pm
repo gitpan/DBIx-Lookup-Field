@@ -6,7 +6,7 @@ use warnings;
 use Carp;
 use base 'Exporter';
 
-our $VERSION = '1.2';
+our $VERSION = '1.21';
 
 our %EXPORT_TAGS = ( 'all' => [ qw(
 	dbi_lookup_field dbi_lookup_field_with_reverse
@@ -152,7 +152,7 @@ site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
 
 =head1 VERSION
 
-This document describes version 1.2 of C<DBIx::Lookup::Field>.
+This document describes version 1.21 of C<DBIx::Lookup::Field>.
 
 =head1 AUTHOR
 

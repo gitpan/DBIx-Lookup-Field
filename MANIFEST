@@ -1,6 +1,6 @@
 Changes
-lib/DBIx/Lookup/Field.pm
+MANIFEST			This list of files
 Makefile.PL
-MANIFEST
 README
-t/01comprehensive.t
+lib/DBIx/Lookup/Field.pm
+t/01distribution.t

@@ -3,10 +3,9 @@ WriteMakefile(
     'NAME'		=> 'DBIx::Lookup::Field',
     'VERSION_FROM'	=> 'lib/DBIx/Lookup/Field.pm',
     'PREREQ_PM'		=> {
-    	Test::Comprehensive => 1.00,
+    	Test::Distribution => 1.02,
     },
     dist                => {
-    	# don't ask about existing .tar.gz files
 	COMPRESS => 'gzip --force --best'
     },
 );

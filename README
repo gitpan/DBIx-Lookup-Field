@@ -79,7 +79,7 @@ AVAILABILITY
     <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
 
 VERSION
-    This document describes version 1.2 of "DBIx::Lookup::Field".
+    This document describes version 1.21 of "DBIx::Lookup::Field".
 
 AUTHOR
     Marcel Grünauer <marcel@cpan.org>
