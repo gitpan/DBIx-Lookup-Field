@@ -6,7 +6,7 @@ use warnings;
 use Carp;
 use base 'Exporter';
 
-our $VERSION = '1.21';
+our $VERSION = '1.22';
 
 our %EXPORT_TAGS = ( 'all' => [ qw(
 	dbi_lookup_field dbi_lookup_field_with_reverse
@@ -135,10 +135,13 @@ so be warned.
 
 =back
 
-=head1 BUGS
+=head1 BUGS AND LIMITATIONS
 
-None known at this time. If you find any oddities or bugs, please do
-report them to the author.
+No bugs have been reported.
+
+Please report any bugs or feature requests to
+C<bug-data-container@rt.cpan.org>, or through the web interface at
+L<http://rt.cpan.org>.
 
 =head1 INSTALLATION
 
@@ -150,17 +153,13 @@ The latest version of this module is available from the Comprehensive Perl
 Archive Network (CPAN). Visit <http://www.perl.com/CPAN/> to find a CPAN
 site near you. Or see <http://www.perl.com/CPAN/authors/id/M/MA/MARCEL/>.
 
-=head1 VERSION
-
-This document describes version 1.21 of C<DBIx::Lookup::Field>.
-
 =head1 AUTHOR
 
-Marcel GrE<uuml>nauer E<lt>marcel@cpan.orgE<gt>
+Marcel GrE<uuml>nauer, C<< <marcel@cpan.org> >>
 
-=head1 COPYRIGHT
+=head1 COPYRIGHT AND LICENSE
 
-Copyright 2001-2002 Marcel GrE<uuml>nauer. All rights reserved.
+Copyright 2001-2007 by Marcel GrE<uuml>nauer
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
@@ -170,3 +169,4 @@ it under the same terms as Perl itself.
 DBI(3pm).
 
 =cut
+
