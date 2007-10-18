@@ -1,18 +1,21 @@
 Revision history for Perl extension DBIx::Lookup::Field.
 
+1.23  Do Okt 18 10:09:39 CEST 2007
+        - fixed version requirement of Test::More
+
 1.22  Mo Sep 10 09:12:36 CEST 2007
-	- converted to new-style distro (ShipIt, Module::Install)
-    - fixed documentation
-    - moved files to where they should be
+        - converted to new-style distro (ShipIt, Module::Install)
+        - fixed documentation
+        - moved files to where they should be
 
 1.21  Tue Sep 10 17:04:25 CEST 2002
-	- Test::Distribution was still called Test::Comprehensive when
-	  1.2 was released, so that got changed (thanks florian)
+        - Test::Distribution was still called Test::Comprehensive when
+          1.2 was released, so that got changed (thanks florian)
 
 1.2   Mon Sep  2 18:40:48 CEST 2002
-	- added dbi_lookup_field_with_reverse()
+        - added dbi_lookup_field_with_reverse()
 
 0.01  Thu Oct 26 12:03:21 2000
-	- original version; created by h2xs 1.20 with options
-		-XA -n DBIx::Lookup::Field
+        - original version; created by h2xs 1.20 with options
+            -XA -n DBIx::Lookup::Field
 

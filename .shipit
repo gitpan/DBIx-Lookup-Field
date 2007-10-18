@@ -1,7 +1,0 @@
-# auto-generated shipit config file.
-steps = FindVersion, ChangeVersion, CheckChangeLog, DistTest, Commit, Tag, MakeDist, UploadCPAN
-
-# svn.tagpattern = MyProj-%v
-svn.tagpattern = svn+ssh://makabaer/home/samba/gr/svnrepos/tags/DBIx-Lookup-Field-%v
-
-# CheckChangeLog.files = ChangeLog, MyProj.CHANGES

@@ -6,17 +6,16 @@ use warnings;
 use Carp;
 use base 'Exporter';
 
-our $VERSION = '1.22';
+our $VERSION = '1.23';
 
-our %EXPORT_TAGS = ( 'all' => [ qw(
-	dbi_lookup_field dbi_lookup_field_with_reverse
-) ] );
-
-our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-
-our @EXPORT = qw(
-	
+our %EXPORT_TAGS = (
+    all => [ qw(
+        dbi_lookup_field dbi_lookup_field_with_reverse
+    ) ],
 );
+
+our @EXPORT_OK = @{ $EXPORT_TAGS{all} = [ map { @$_ } values %EXPORT_TAGS ] };
+
 
 sub dbi_lookup_field {
 	my %args = @_;
@@ -28,9 +27,9 @@ sub dbi_lookup_field {
 
 	my $where = $args{WHERE} ? "WHERE $args{WHERE}" : '';
 
-	my $sth = $args{DBH}->prepare(<<EOSQL);
-    select $args{KEY}, $args{VALUE} from $args{TABLE} $where
-EOSQL
+	my $sth = $args{DBH}->prepare(qq/
+        select $args{KEY}, $args{VALUE} from $args{TABLE} $where
+    /);
 	$sth->execute;
 
 	my %lookup;
@@ -42,13 +41,17 @@ EOSQL
 	return \%lookup;
 }
 
+
 sub dbi_lookup_field_with_reverse {
 	my $lookup = dbi_lookup_field(@_);
 	my %reverse = reverse %$lookup;
 	($lookup, \%reverse);
 }
 
+
 1;
+
+
 __END__
 
 =head1 NAME
