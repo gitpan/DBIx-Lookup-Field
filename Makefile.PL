@@ -1,10 +1,44 @@
-use inc::Module::Install;
-name 'DBIx-Lookup-Field';
-all_from 'lib/DBIx/Lookup/Field.pm';
-perl_version '5.006';
 
-build_requires 'Test::More' => '0.70';
+use strict;
+use warnings;
 
-use_standard_tests;
-auto_include;
-WriteAll;
+ BEGIN { require 5.008; } 
+
+use ExtUtils::MakeMaker 6.11;
+
+
+
+my %WriteMakefileArgs = (
+                       'test' => {
+                                   'TESTS' => 't/*.t'
+                                 },
+                       'NAME' => 'DBIx::Lookup::Field',
+                       'DISTNAME' => 'DBIx-Lookup-Field',
+                       'CONFIGURE_REQUIRES' => {
+                                                 'ExtUtils::MakeMaker' => '6.11'
+                                               },
+                       'AUTHOR' => 'Marcel Gruenauer <marcel@cpan.org>',
+                       'BUILD_REQUIRES' => {},
+                       'ABSTRACT' => 'Create a lookup hash from a database table',
+                       'EXE_FILES' => [],
+                       'VERSION' => '1.100850',
+                       'PREREQ_PM' => {
+                                        'Test::More' => '0.88',
+                                        'Scalar::Util' => '0',
+                                        'English' => '0',
+                                        'File::Find' => '0',
+                                        'File::Temp' => '0',
+                                        'Exporter' => '0',
+                                        'Carp' => '0'
+                                      },
+                       'LICENSE' => 'perl'
+                     );
+
+
+delete $WriteMakefileArgs{LICENSE}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.31) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+
+
