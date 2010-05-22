@@ -3,7 +3,9 @@ use strict;
 use warnings;
 
 package DBIx::Lookup::Field;
-our $VERSION = '1.100850';
+BEGIN {
+  $DBIx::Lookup::Field::VERSION = '2.101420';
+}
 # ABSTRACT: Create a lookup hash from a database table
 use Carp;
 use Exporter qw(import);
@@ -52,7 +54,7 @@ DBIx::Lookup::Field - Create a lookup hash from a database table
 
 =head1 VERSION
 
-version 1.100850
+version 2.101420
 
 =head1 SYNOPSIS
 

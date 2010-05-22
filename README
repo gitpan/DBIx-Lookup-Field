@@ -2,7 +2,7 @@ NAME
     DBIx::Lookup::Field - Create a lookup hash from a database table
 
 VERSION
-    version 1.100850
+    version 2.101420
 
 SYNOPSIS
       use DBI;

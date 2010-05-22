@@ -1,5 +1,8 @@
 Revision history for Perl extension DBIx-Lookup-Field
 
+2.101420  2010-05-22 13:58:57 Europe/Vienna
+    - set major version to 2 to preserve CPAN continuity
+
 1.100850  2010-03-26 21:27:40 Europe/Vienna
     - converted the distribution to Dist::Zilla-style
 
